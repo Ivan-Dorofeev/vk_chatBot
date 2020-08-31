@@ -4,7 +4,7 @@ import random
 import requests
 from pony.orm import db_session
 
-import Settings_local
+from env_chat_bot import Settings_local
 import handlers
 import vk_api
 from vk_api.bot_longpoll import VkBotLongPoll, VkBotEventType
