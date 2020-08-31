@@ -1,0 +1,408 @@
+2020-08-23 10:54:21,679 : INFO - Не умеем обрабатывать такое событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+2020-08-23 10:54:23,097 : INFO - Не умеем обрабатывать такое событие такого типа VkBotEventType.MESSAGE_REPLY
+2020-08-23 10:54:26,885 : INFO - Не умеем обрабатывать такое событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+2020-08-23 11:01:52,154 : INFO - Не умеем обрабатывать такое событие такого типа VkBotEventType.MESSAGE_REPLY
+2020-08-23 11:01:54,660 : INFO - Не умеем обрабатывать такое событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+2020-08-23 11:03:24,891 : ERROR - ошибка в обработке события
+Traceback (most recent call last):
+  File "/home/axxel/PycharmProjects/python_base_1/venv/lib/python3.7/site-packages/urllib3/connectionpool.py", line 677, in urlopen
+    chunked=chunked,
+  File "/home/axxel/PycharmProjects/python_base_1/venv/lib/python3.7/site-packages/urllib3/connectionpool.py", line 426, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 3, in raise_from
+  File "/home/axxel/PycharmProjects/python_base_1/venv/lib/python3.7/site-packages/urllib3/connectionpool.py", line 421, in _make_request
+    httplib_response = conn.getresponse()
+  File "/usr/lib/python3.7/http/client.py", line 1344, in getresponse
+    response.begin()
+  File "/usr/lib/python3.7/http/client.py", line 306, in begin
+    version, status, reason = self._read_status()
+  File "/usr/lib/python3.7/http/client.py", line 275, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/axxel/PycharmProjects/python_base_1/venv/lib/python3.7/site-packages/requests/adapters.py", line 449, in send
+    timeout=timeout
+  File "/home/axxel/PycharmProjects/python_base_1/venv/lib/python3.7/site-packages/urllib3/connectionpool.py", line 725, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "/home/axxel/PycharmProjects/python_base_1/venv/lib/python3.7/site-packages/urllib3/util/retry.py", line 403, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/home/axxel/PycharmProjects/python_base_1/venv/lib/python3.7/site-packages/urllib3/packages/six.py", line 734, in reraise
+    raise value.with_traceback(tb)
+  File "/home/axxel/PycharmProjects/python_base_1/venv/lib/python3.7/site-packages/urllib3/connectionpool.py", line 677, in urlopen
+    chunked=chunked,
+  File "/home/axxel/PycharmProjects/python_base_1/venv/lib/python3.7/site-packages/urllib3/connectionpool.py", line 426, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 3, in raise_from
+  File "/home/axxel/PycharmProjects/python_base_1/venv/lib/python3.7/site-packages/urllib3/connectionpool.py", line 421, in _make_request
+    httplib_response = conn.getresponse()
+  File "/usr/lib/python3.7/http/client.py", line 1344, in getresponse
+    response.begin()
+  File "/usr/lib/python3.7/http/client.py", line 306, in begin
+    version, status, reason = self._read_status()
+  File "/usr/lib/python3.7/http/client.py", line 275, in _read_status
+    raise RemoteDisconnected("Remote end closed connection without"
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/axxel/PycharmProjects/python_base_1/env_chat_bot/Bot.py", line 57, in run
+    self.on_event(event)
+  File "<string>", line 2, in on_event
+  File "/home/axxel/PycharmProjects/python_base_1/venv/lib/python3.7/site-packages/pony/orm/core.py", line 528, in new_func
+    result = func(*args, **kwargs)
+  File "/home/axxel/PycharmProjects/python_base_1/env_chat_bot/Bot.py", line 79, in on_event
+    self.continue_scenario(text, state, user_id)
+  File "/home/axxel/PycharmProjects/python_base_1/env_chat_bot/Bot.py", line 145, in continue_scenario
+    self.send_step(next_step, user_id, text, state.context)
+  File "/home/axxel/PycharmProjects/python_base_1/env_chat_bot/Bot.py", line 124, in send_step
+    self.send_image(image, user_id)
+  File "/home/axxel/PycharmProjects/python_base_1/env_chat_bot/Bot.py", line 101, in send_image
+    upload_data = requests.post(url=upload_url, files={'photo': ('image.png', image, 'image/png')}).json()
+  File "/home/axxel/PycharmProjects/python_base_1/venv/lib/python3.7/site-packages/requests/api.py", line 119, in post
+    return request('post', url, data=data, json=json, **kwargs)
+  File "/home/axxel/PycharmProjects/python_base_1/venv/lib/python3.7/site-packages/requests/api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/axxel/PycharmProjects/python_base_1/venv/lib/python3.7/site-packages/requests/sessions.py", line 530, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/axxel/PycharmProjects/python_base_1/venv/lib/python3.7/site-packages/requests/sessions.py", line 643, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/axxel/PycharmProjects/python_base_1/venv/lib/python3.7/site-packages/requests/adapters.py", line 498, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2020-08-23 11:10:44,926 : INFO - Не умеем обрабатывать такое событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+2020-08-23 11:10:48,052 : INFO - Не умеем обрабатывать такое событие такого типа VkBotEventType.MESSAGE_REPLY
+2020-08-23 11:10:49,937 : INFO - Не умеем обрабатывать такое событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+2020-08-23 12:44:11,136 : INFO - Не умеем обрабатывать такое событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+2020-08-23 12:44:12,481 : INFO - Не умеем обрабатывать такое событие такого типа VkBotEventType.MESSAGE_REPLY
+2020-08-23 12:44:16,526 : INFO - Не умеем обрабатывать такое событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+2020-08-23 12:45:39,091 : ERROR - ошибка в обработке события
+Traceback (most recent call last):
+  File "/home/axxel/PycharmProjects/python_base_1/env_chat_bot/Bot.py", line 57, in run
+    self.on_event(event)
+  File "<string>", line 2, in on_event
+  File "/home/axxel/PycharmProjects/python_base_1/venv/lib/python3.7/site-packages/pony/orm/core.py", line 528, in new_func
+    result = func(*args, **kwargs)
+  File "/home/axxel/PycharmProjects/python_base_1/env_chat_bot/Bot.py", line 79, in on_event
+    self.continue_scenario(text, state, user_id)
+  File "/home/axxel/PycharmProjects/python_base_1/env_chat_bot/Bot.py", line 152, in continue_scenario
+    Registration(name=state.context['name'], email=state.context['email'])
+KeyError: 'name'
+2020-08-23 12:54:19,827 : INFO - Не умеем обрабатывать такое событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+2020-08-23 12:54:20,625 : INFO - Не умеем обрабатывать такое событие такого типа VkBotEventType.MESSAGE_REPLY
+2020-08-23 12:55:11,688 : ERROR - ошибка в обработке события
+Traceback (most recent call last):
+  File "/home/axxel/PycharmProjects/python_base_1/env_chat_bot/Bot.py", line 57, in run
+    self.on_event(event)
+  File "<string>", line 2, in on_event
+  File "/home/axxel/PycharmProjects/python_base_1/venv/lib/python3.7/site-packages/pony/orm/core.py", line 528, in new_func
+    result = func(*args, **kwargs)
+  File "/home/axxel/PycharmProjects/python_base_1/env_chat_bot/Bot.py", line 79, in on_event
+    self.continue_scenario(text, state, user_id)
+  File "/home/axxel/PycharmProjects/python_base_1/env_chat_bot/Bot.py", line 145, in continue_scenario
+    self.send_step(next_step, user_id, text, state.context)
+  File "/home/axxel/PycharmProjects/python_base_1/env_chat_bot/Bot.py", line 124, in send_step
+    self.send_image(image, user_id)
+  File "/home/axxel/PycharmProjects/python_base_1/env_chat_bot/Bot.py", line 114, in send_image
+    peer_id=user_id
+  File "/home/axxel/PycharmProjects/python_base_1/venv/lib/python3.7/site-packages/vk_api/vk_api.py", line 681, in __call__
+    return self._vk.method(self._method, kwargs)
+  File "/home/axxel/PycharmProjects/python_base_1/venv/lib/python3.7/site-packages/vk_api/vk_api.py", line 646, in method
+    raise error
+vk_api.exceptions.ApiError: [100] One of the parameters specified was missing or invalid: message is empty or invalid
+2020-08-23 13:02:24,623 : INFO - Не умеем обрабатывать такое событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+2020-08-23 13:02:25,708 : INFO - Не умеем обрабатывать такое событие такого типа VkBotEventType.MESSAGE_REPLY
+2020-08-23 13:02:29,698 : INFO - Не умеем обрабатывать такое событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+2020-08-23 13:08:44,768 : INFO - Не умеем обрабатывать такое событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+2020-08-23 13:08:45,402 : INFO - Не умеем обрабатывать такое событие такого типа VkBotEventType.MESSAGE_REPLY
+2020-08-23 13:08:49,352 : ERROR - ошибка в обработке события
+Traceback (most recent call last):
+  File "/home/axxel/PycharmProjects/python_base_1/env_chat_bot/Bot.py", line 57, in run
+    self.on_event(event)
+  File "<string>", line 2, in on_event
+  File "/home/axxel/PycharmProjects/python_base_1/venv/lib/python3.7/site-packages/pony/orm/core.py", line 528, in new_func
+    result = func(*args, **kwargs)
+  File "/home/axxel/PycharmProjects/python_base_1/env_chat_bot/Bot.py", line 79, in on_event
+    self.continue_scenario(text, state, user_id)
+  File "/home/axxel/PycharmProjects/python_base_1/env_chat_bot/Bot.py", line 147, in continue_scenario
+    self.send_step(next_step, user_id, text, state.context)
+  File "/home/axxel/PycharmProjects/python_base_1/env_chat_bot/Bot.py", line 126, in send_step
+    self.send_image(image, user_id)
+  File "/home/axxel/PycharmProjects/python_base_1/env_chat_bot/Bot.py", line 102, in send_image
+    upload_data2 = requests.post(url=upload_url, photo={'photo': ('image.png', image, 'image/png')})
+  File "/home/axxel/PycharmProjects/python_base_1/venv/lib/python3.7/site-packages/requests/api.py", line 119, in post
+    return request('post', url, data=data, json=json, **kwargs)
+  File "/home/axxel/PycharmProjects/python_base_1/venv/lib/python3.7/site-packages/requests/api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+TypeError: request() got an unexpected keyword argument 'photo'
+2020-08-23 13:09:05,060 : INFO - Не умеем обрабатывать такое событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+2020-08-23 13:09:06,027 : INFO - Не умеем обрабатывать такое событие такого типа VkBotEventType.MESSAGE_REPLY
+2020-08-23 13:09:11,156 : ERROR - ошибка в обработке события
+Traceback (most recent call last):
+  File "/home/axxel/PycharmProjects/python_base_1/env_chat_bot/Bot.py", line 57, in run
+    self.on_event(event)
+  File "<string>", line 2, in on_event
+  File "/home/axxel/PycharmProjects/python_base_1/venv/lib/python3.7/site-packages/pony/orm/core.py", line 528, in new_func
+    result = func(*args, **kwargs)
+  File "/home/axxel/PycharmProjects/python_base_1/env_chat_bot/Bot.py", line 79, in on_event
+    self.continue_scenario(text, state, user_id)
+  File "/home/axxel/PycharmProjects/python_base_1/env_chat_bot/Bot.py", line 147, in continue_scenario
+    self.send_step(next_step, user_id, text, state.context)
+  File "/home/axxel/PycharmProjects/python_base_1/env_chat_bot/Bot.py", line 126, in send_step
+    self.send_image(image, user_id)
+  File "/home/axxel/PycharmProjects/python_base_1/env_chat_bot/Bot.py", line 102, in send_image
+    upload_data2 = requests.post(url=upload_url, photo={'photo': ('image.png', image, 'image/png')})
+  File "/home/axxel/PycharmProjects/python_base_1/venv/lib/python3.7/site-packages/requests/api.py", line 119, in post
+    return request('post', url, data=data, json=json, **kwargs)
+  File "/home/axxel/PycharmProjects/python_base_1/venv/lib/python3.7/site-packages/requests/api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+TypeError: request() got an unexpected keyword argument 'photo'
+2020-08-23 13:10:10,770 : INFO - Не умеем обрабатывать такое событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+2020-08-23 13:10:11,696 : INFO - Не умеем обрабатывать такое событие такого типа VkBotEventType.MESSAGE_REPLY
+2020-08-23 13:10:16,347 : ERROR - ошибка в обработке события
+Traceback (most recent call last):
+  File "/home/axxel/PycharmProjects/python_base_1/env_chat_bot/Bot.py", line 57, in run
+    self.on_event(event)
+  File "<string>", line 2, in on_event
+  File "/home/axxel/PycharmProjects/python_base_1/venv/lib/python3.7/site-packages/pony/orm/core.py", line 528, in new_func
+    result = func(*args, **kwargs)
+  File "/home/axxel/PycharmProjects/python_base_1/env_chat_bot/Bot.py", line 79, in on_event
+    self.continue_scenario(text, state, user_id)
+  File "/home/axxel/PycharmProjects/python_base_1/env_chat_bot/Bot.py", line 148, in continue_scenario
+    self.send_step(next_step, user_id, text, state.context)
+  File "/home/axxel/PycharmProjects/python_base_1/env_chat_bot/Bot.py", line 127, in send_step
+    self.send_image(image, user_id)
+  File "/home/axxel/PycharmProjects/python_base_1/env_chat_bot/Bot.py", line 102, in send_image
+    upload_data2 = requests.post(url=upload_url, photo={'photo': ('image.png', image, 'image/png')}).json()
+  File "/home/axxel/PycharmProjects/python_base_1/venv/lib/python3.7/site-packages/requests/api.py", line 119, in post
+    return request('post', url, data=data, json=json, **kwargs)
+  File "/home/axxel/PycharmProjects/python_base_1/venv/lib/python3.7/site-packages/requests/api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+TypeError: request() got an unexpected keyword argument 'photo'
+2020-08-23 13:11:35,847 : INFO - Не умеем обрабатывать такое событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+2020-08-23 13:11:36,382 : INFO - Не умеем обрабатывать такое событие такого типа VkBotEventType.MESSAGE_REPLY
+2020-08-23 13:12:44,716 : ERROR - ошибка в обработке события
+Traceback (most recent call last):
+  File "/home/axxel/PycharmProjects/python_base_1/env_chat_bot/Bot.py", line 57, in run
+    self.on_event(event)
+  File "<string>", line 2, in on_event
+  File "/home/axxel/PycharmProjects/python_base_1/venv/lib/python3.7/site-packages/pony/orm/core.py", line 528, in new_func
+    result = func(*args, **kwargs)
+  File "/home/axxel/PycharmProjects/python_base_1/env_chat_bot/Bot.py", line 79, in on_event
+    self.continue_scenario(text, state, user_id)
+  File "/home/axxel/PycharmProjects/python_base_1/env_chat_bot/Bot.py", line 148, in continue_scenario
+    self.send_step(next_step, user_id, text, state.context)
+  File "/home/axxel/PycharmProjects/python_base_1/env_chat_bot/Bot.py", line 127, in send_step
+    self.send_image(image, user_id)
+  File "/home/axxel/PycharmProjects/python_base_1/env_chat_bot/Bot.py", line 102, in send_image
+    upload_data2 = requests.post(url=upload_url, photo=image)
+  File "/home/axxel/PycharmProjects/python_base_1/venv/lib/python3.7/site-packages/requests/api.py", line 119, in post
+    return request('post', url, data=data, json=json, **kwargs)
+  File "/home/axxel/PycharmProjects/python_base_1/venv/lib/python3.7/site-packages/requests/api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+TypeError: request() got an unexpected keyword argument 'photo'
+2020-08-23 13:13:02,322 : INFO - Не умеем обрабатывать такое событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+2020-08-23 13:13:02,966 : INFO - Не умеем обрабатывать такое событие такого типа VkBotEventType.MESSAGE_REPLY
+2020-08-23 13:16:16,809 : INFO - Не умеем обрабатывать такое событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+2020-08-23 13:16:17,678 : INFO - Не умеем обрабатывать такое событие такого типа VkBotEventType.MESSAGE_REPLY
+2020-08-23 13:16:21,860 : INFO - Не умеем обрабатывать такое событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+2020-08-23 13:17:18,310 : ERROR - ошибка в обработке события
+Traceback (most recent call last):
+  File "/home/axxel/PycharmProjects/python_base_1/env_chat_bot/Bot.py", line 57, in run
+    self.on_event(event)
+  File "<string>", line 2, in on_event
+  File "/home/axxel/PycharmProjects/python_base_1/venv/lib/python3.7/site-packages/pony/orm/core.py", line 528, in new_func
+    result = func(*args, **kwargs)
+  File "/home/axxel/PycharmProjects/python_base_1/env_chat_bot/Bot.py", line 79, in on_event
+    self.continue_scenario(text, state, user_id)
+  File "/home/axxel/PycharmProjects/python_base_1/env_chat_bot/Bot.py", line 152, in continue_scenario
+    Registration(name=state['user_id'],
+TypeError: 'UserStates' object is not subscriptable
+2020-08-24 18:09:33,040 : INFO - Не умеем обрабатывать такое событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+2020-08-24 18:09:34,264 : INFO - Не умеем обрабатывать такое событие такого типа VkBotEventType.MESSAGE_REPLY
+2020-08-24 18:10:18,507 : INFO - Не умеем обрабатывать такое событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+2020-08-24 18:10:19,496 : INFO - Не умеем обрабатывать такое событие такого типа VkBotEventType.MESSAGE_REPLY
+2020-08-24 18:10:23,715 : INFO - Не умеем обрабатывать такое событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+2020-08-24 18:10:41,365 : ERROR - ошибка в обработке события
+Traceback (most recent call last):
+  File "/home/axxel/PycharmProjects/python_base_1/env_chat_bot/Bot.py", line 57, in run
+    self.on_event(event)
+  File "<string>", line 2, in on_event
+  File "/home/axxel/PycharmProjects/python_base_1/venv/lib/python3.7/site-packages/pony/orm/core.py", line 528, in new_func
+    result = func(*args, **kwargs)
+  File "/home/axxel/PycharmProjects/python_base_1/env_chat_bot/Bot.py", line 79, in on_event
+    self.continue_scenario(text, state, user_id)
+  File "/home/axxel/PycharmProjects/python_base_1/env_chat_bot/Bot.py", line 145, in continue_scenario
+    self.send_step(next_step, user_id, text, state.context)
+  File "/home/axxel/PycharmProjects/python_base_1/env_chat_bot/Bot.py", line 124, in send_step
+    self.send_image(image, user_id)
+  File "/home/axxel/PycharmProjects/python_base_1/env_chat_bot/Bot.py", line 107, in send_image
+    media_id = image_data[0]['group_id']
+KeyError: 'group_id'
+2020-08-24 18:11:01,647 : INFO - Не умеем обрабатывать такое событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+2020-08-24 18:11:02,743 : INFO - Не умеем обрабатывать такое событие такого типа VkBotEventType.MESSAGE_REPLY
+2020-08-24 18:11:08,756 : INFO - Не умеем обрабатывать такое событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+2020-08-24 18:11:10,625 : ERROR - ошибка в обработке события
+Traceback (most recent call last):
+  File "/home/axxel/PycharmProjects/python_base_1/env_chat_bot/Bot.py", line 57, in run
+    self.on_event(event)
+  File "<string>", line 2, in on_event
+  File "/home/axxel/PycharmProjects/python_base_1/venv/lib/python3.7/site-packages/pony/orm/core.py", line 528, in new_func
+    result = func(*args, **kwargs)
+  File "/home/axxel/PycharmProjects/python_base_1/env_chat_bot/Bot.py", line 79, in on_event
+    self.continue_scenario(text, state, user_id)
+  File "/home/axxel/PycharmProjects/python_base_1/env_chat_bot/Bot.py", line 145, in continue_scenario
+    self.send_step(next_step, user_id, text, state.context)
+  File "/home/axxel/PycharmProjects/python_base_1/env_chat_bot/Bot.py", line 124, in send_step
+    self.send_image(image, user_id)
+  File "/home/axxel/PycharmProjects/python_base_1/env_chat_bot/Bot.py", line 107, in send_image
+    media_id = image_data[0]['media_id']
+KeyError: 'media_id'
+2020-08-24 18:12:32,125 : INFO - Не умеем обрабатывать такое событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+2020-08-24 18:12:33,055 : INFO - Не умеем обрабатывать такое событие такого типа VkBotEventType.MESSAGE_REPLY
+2020-08-24 18:12:37,211 : INFO - Не умеем обрабатывать такое событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+2020-08-24 18:12:58,412 : ERROR - ошибка в обработке события
+Traceback (most recent call last):
+  File "/home/axxel/PycharmProjects/python_base_1/env_chat_bot/Bot.py", line 57, in run
+    self.on_event(event)
+  File "<string>", line 2, in on_event
+  File "/home/axxel/PycharmProjects/python_base_1/venv/lib/python3.7/site-packages/pony/orm/core.py", line 528, in new_func
+    result = func(*args, **kwargs)
+  File "/home/axxel/PycharmProjects/python_base_1/env_chat_bot/Bot.py", line 79, in on_event
+    self.continue_scenario(text, state, user_id)
+  File "/home/axxel/PycharmProjects/python_base_1/env_chat_bot/Bot.py", line 152, in continue_scenario
+    Registration(name=state['user_id'],
+TypeError: 'UserStates' object is not subscriptable
+2020-08-26 11:13:12,829 : INFO - Не умеем обрабатывать такое событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+2020-08-26 11:13:14,132 : INFO - Не умеем обрабатывать такое событие такого типа VkBotEventType.MESSAGE_REPLY
+2020-08-26 11:13:18,848 : INFO - Не умеем обрабатывать такое событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+2020-08-26 11:13:24,617 : ERROR - ошибка в обработке события
+Traceback (most recent call last):
+  File "/home/axxel/PycharmProjects/python_base_1/env_chat_bot/Bot.py", line 57, in run
+    self.on_event(event)
+  File "<string>", line 2, in on_event
+  File "/home/axxel/PycharmProjects/python_base_1/venv/lib/python3.7/site-packages/pony/orm/core.py", line 528, in new_func
+    result = func(*args, **kwargs)
+  File "/home/axxel/PycharmProjects/python_base_1/env_chat_bot/Bot.py", line 79, in on_event
+    self.continue_scenario(text, state, user_id)
+  File "/home/axxel/PycharmProjects/python_base_1/env_chat_bot/Bot.py", line 143, in continue_scenario
+    Registration(name=state['user_id'],
+TypeError: 'UserStates' object is not subscriptable
+2020-08-26 11:14:45,661 : INFO - Не умеем обрабатывать такое событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+2020-08-26 11:14:46,207 : INFO - Не умеем обрабатывать такое событие такого типа VkBotEventType.MESSAGE_REPLY
+2020-08-26 11:15:44,192 : ERROR - ошибка в обработке события
+Traceback (most recent call last):
+  File "/home/axxel/PycharmProjects/python_base_1/env_chat_bot/Bot.py", line 57, in run
+    self.on_event(event)
+  File "<string>", line 2, in on_event
+  File "/home/axxel/PycharmProjects/python_base_1/venv/lib/python3.7/site-packages/pony/orm/core.py", line 528, in new_func
+    result = func(*args, **kwargs)
+  File "/home/axxel/PycharmProjects/python_base_1/env_chat_bot/Bot.py", line 79, in on_event
+    self.continue_scenario(text, state, user_id)
+  File "/home/axxel/PycharmProjects/python_base_1/env_chat_bot/Bot.py", line 145, in continue_scenario
+    Registration(name=state['user_id'],
+TypeError: 'UserStates' object is not subscriptable
+2020-08-26 11:16:49,697 : INFO - Не умеем обрабатывать такое событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+2020-08-26 11:16:50,413 : INFO - Не умеем обрабатывать такое событие такого типа VkBotEventType.MESSAGE_REPLY
+2020-08-26 11:17:23,711 : ERROR - ошибка в обработке события
+Traceback (most recent call last):
+  File "/home/axxel/PycharmProjects/python_base_1/env_chat_bot/Bot.py", line 57, in run
+    self.on_event(event)
+  File "<string>", line 2, in on_event
+  File "/home/axxel/PycharmProjects/python_base_1/venv/lib/python3.7/site-packages/pony/orm/core.py", line 528, in new_func
+    result = func(*args, **kwargs)
+  File "/home/axxel/PycharmProjects/python_base_1/env_chat_bot/Bot.py", line 79, in on_event
+    self.continue_scenario(text, state, user_id)
+  File "/home/axxel/PycharmProjects/python_base_1/env_chat_bot/Bot.py", line 149, in continue_scenario
+    date=state.context['date'])
+  File "<string>", line 2, in __init__
+  File "/home/axxel/PycharmProjects/python_base_1/venv/lib/python3.7/site-packages/pony/utils/utils.py", line 77, in cut_traceback
+    reraise(exc_type, exc, last_pony_tb)
+  File "/home/axxel/PycharmProjects/python_base_1/venv/lib/python3.7/site-packages/pony/utils/utils.py", line 95, in reraise
+    try: raise exc.with_traceback(tb)
+  File "/home/axxel/PycharmProjects/python_base_1/venv/lib/python3.7/site-packages/pony/orm/dbapiprovider.py", line 464, in validate
+    'Value type for attribute %s must be %s. Got: %r' % (converter.attr, unicode.__name__, type(val)))
+  File "/home/axxel/PycharmProjects/python_base_1/venv/lib/python3.7/site-packages/pony/utils/utils.py", line 108, in throw
+    raise exc  # Set "pony.options.CUT_TRACEBACK = False" to see full traceback
+TypeError: Value type for attribute Registration.name must be str. Got: <class 'pony.orm.core.Required'>
+2020-08-26 11:17:59,722 : INFO - Не умеем обрабатывать такое событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+2020-08-26 11:18:00,546 : INFO - Не умеем обрабатывать такое событие такого типа VkBotEventType.MESSAGE_REPLY
+2020-08-26 11:18:54,224 : INFO - Не умеем обрабатывать такое событие такого типа VkBotEventType.MESSAGE_REPLY
+2020-08-26 11:18:55,514 : INFO - Не умеем обрабатывать такое событие такого типа VkBotEventType.MESSAGE_REPLY
+2020-08-26 11:19:04,781 : INFO - Не умеем обрабатывать такое событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+2020-08-26 11:19:08,025 : DEBUG - User gets {'name': 'Cпасибо', 'token': ('спасиб', 'супер'), 'scenario': None, 'answer': 'Вам спасибо за ваше обращение :)'}
+2020-08-26 11:19:09,297 : DEBUG - User gets {'name': 'ticket', 'token': ('/ticket', 'ticket'), 'scenario': 'ticket', 'answer': None}
+2020-08-26 11:19:10,334 : DEBUG - User gets {'name': 'help', 'token': ('/help', 'help'), 'answer': 'Чтобы закзать авиабилет на самолёт введите "/ticket" и следуйте инструкциям'}
+2020-08-26 11:19:16,380 : INFO - Не умеем обрабатывать такое событие такого типа VkBotEventType.MESSAGE_REPLY
+2020-08-26 12:14:43,950 : INFO - Не умеем обрабатывать такое событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+2020-08-26 12:14:44,808 : DEBUG - User gets {'name': 'Cпасибо', 'token': ('спасиб', 'супер'), 'scenario': None, 'answer': 'Вам спасибо за ваше обращение :)'}
+2020-08-26 12:14:44,808 : DEBUG - User gets {'name': 'ticket', 'token': ('/ticket', 'ticket'), 'scenario': 'ticket', 'answer': None}
+2020-08-26 12:14:44,808 : DEBUG - User gets {'name': 'help', 'token': ('/help', 'help'), 'answer': 'Чтобы закзать авиабилет на самолёт введите "/ticket" и следуйте инструкциям'}
+2020-08-26 12:14:45,140 : INFO - Не умеем обрабатывать такое событие такого типа VkBotEventType.MESSAGE_REPLY
+2020-08-26 12:14:47,464 : DEBUG - User gets {'name': 'Cпасибо', 'token': ('спасиб', 'супер'), 'scenario': None, 'answer': 'Вам спасибо за ваше обращение :)'}
+2020-08-26 12:14:47,464 : DEBUG - User gets {'name': 'ticket', 'token': ('/ticket', 'ticket'), 'scenario': 'ticket', 'answer': None}
+2020-08-26 12:14:47,662 : INFO - Не умеем обрабатывать такое событие такого типа VkBotEventType.MESSAGE_REPLY
+2020-08-26 12:14:50,922 : INFO - Не умеем обрабатывать такое событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+2020-08-26 12:14:52,324 : INFO - Не умеем обрабатывать такое событие такого типа VkBotEventType.MESSAGE_REPLY
+2020-08-26 12:14:56,112 : INFO - Не умеем обрабатывать такое событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+2020-08-26 12:14:59,075 : INFO - Не умеем обрабатывать такое событие такого типа VkBotEventType.MESSAGE_REPLY
+2020-08-26 12:15:03,493 : INFO - Не умеем обрабатывать такое событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+2020-08-26 12:15:05,472 : INFO - Не умеем обрабатывать такое событие такого типа VkBotEventType.MESSAGE_REPLY
+2020-08-26 12:15:12,576 : INFO - Не умеем обрабатывать такое событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+2020-08-26 12:15:17,666 : INFO - Не умеем обрабатывать такое событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+2020-08-26 12:15:19,897 : INFO - Не умеем обрабатывать такое событие такого типа VkBotEventType.MESSAGE_REPLY
+2020-08-26 12:15:33,141 : INFO - Не умеем обрабатывать такое событие такого типа VkBotEventType.MESSAGE_EDIT
+2020-08-26 12:15:38,268 : INFO - Не умеем обрабатывать такое событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+2020-08-26 12:15:41,234 : INFO - Не умеем обрабатывать такое событие такого типа VkBotEventType.MESSAGE_REPLY
+2020-08-26 12:15:47,840 : INFO - Не умеем обрабатывать такое событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+2020-08-26 12:15:48,892 : INFO - Не умеем обрабатывать такое событие такого типа VkBotEventType.MESSAGE_REPLY
+2020-08-26 12:15:53,041 : INFO - Не умеем обрабатывать такое событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+2020-08-26 12:15:53,450 : INFO - Не умеем обрабатывать такое событие такого типа VkBotEventType.MESSAGE_REPLY
+2020-08-26 12:15:58,531 : INFO - Не умеем обрабатывать такое событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+2020-08-26 12:16:02,766 : INFO - Не умеем обрабатывать такое событие такого типа VkBotEventType.MESSAGE_REPLY
+2020-08-26 12:16:04,375 : INFO - Не умеем обрабатывать такое событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+2020-08-26 12:16:04,823 : INFO - Не умеем обрабатывать такое событие такого типа VkBotEventType.MESSAGE_REPLY
+2020-08-26 12:16:10,936 : ERROR - ошибка в обработке события
+Traceback (most recent call last):
+  File "/home/axxel/PycharmProjects/python_base_1/env_chat_bot/Bot.py", line 57, in run
+    self.on_event(event)
+  File "<string>", line 2, in on_event
+  File "/home/axxel/PycharmProjects/python_base_1/venv/lib/python3.7/site-packages/pony/orm/core.py", line 528, in new_func
+    result = func(*args, **kwargs)
+  File "/home/axxel/PycharmProjects/python_base_1/env_chat_bot/Bot.py", line 79, in on_event
+    self.continue_scenario(text, state, user_id)
+  File "/home/axxel/PycharmProjects/python_base_1/env_chat_bot/Bot.py", line 148, in continue_scenario
+    date=state.context['date'])
+  File "/home/axxel/PycharmProjects/python_base_1/venv/lib/python3.7/site-packages/pony/orm/core.py", line 4695, in __init__
+    avdict[attr] = attr.validate(val, obj, from_db=False)
+  File "/home/axxel/PycharmProjects/python_base_1/venv/lib/python3.7/site-packages/pony/orm/core.py", line 2534, in validate
+    val = Attribute.validate(attr, val, obj, entity, from_db)
+  File "/home/axxel/PycharmProjects/python_base_1/venv/lib/python3.7/site-packages/pony/orm/core.py", line 2205, in validate
+    val = converter.validate(val, obj)
+  File "/home/axxel/PycharmProjects/python_base_1/venv/lib/python3.7/site-packages/pony/orm/dbapiprovider.py", line 464, in validate
+    'Value type for attribute %s must be %s. Got: %r' % (converter.attr, unicode.__name__, type(val)))
+  File "/home/axxel/PycharmProjects/python_base_1/venv/lib/python3.7/site-packages/pony/utils/utils.py", line 106, in throw
+    raise exc
+TypeError: Value type for attribute Registration.name must be str. Got: <class 'int'>
+2020-08-26 12:17:52,708 : INFO - Не умеем обрабатывать такое событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+2020-08-26 12:17:53,630 : INFO - Не умеем обрабатывать такое событие такого типа VkBotEventType.MESSAGE_REPLY
+2020-08-26 12:17:59,641 : INFO - Не умеем обрабатывать такое событие такого типа VkBotEventType.MESSAGE_REPLY
+2020-08-26 12:17:59,642 : INFO - Не умеем обрабатывать такое событие такого типа VkBotEventType.MESSAGE_REPLY
+2020-08-26 12:18:06,630 : INFO - Не умеем обрабатывать такое событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+2020-08-26 12:18:07,420 : DEBUG - User gets {'name': 'Cпасибо', 'token': ('спасиб', 'супер'), 'scenario': None, 'answer': 'Вам спасибо за ваше обращение :)'}
+2020-08-26 12:18:07,420 : DEBUG - User gets {'name': 'ticket', 'token': ('/ticket', 'ticket'), 'scenario': 'ticket', 'answer': None}
+2020-08-26 12:18:07,421 : DEBUG - User gets {'name': 'help', 'token': ('/help', 'help'), 'answer': 'Чтобы закзать авиабилет на самолёт введите "/ticket" и следуйте инструкциям'}
+2020-08-26 12:18:07,552 : INFO - Не умеем обрабатывать такое событие такого типа VkBotEventType.MESSAGE_REPLY
+2020-08-28 09:04:19,062 : INFO - Не умеем обрабатывать такое событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+2020-08-28 09:04:20,116 : DEBUG - User gets {'name': 'Cпасибо', 'token': ('спасиб', 'супер'), 'scenario': None, 'answer': 'Вам спасибо за ваше обращение :)'}
+2020-08-28 09:04:20,116 : DEBUG - User gets {'name': 'ticket', 'token': ('/ticket', 'ticket'), 'scenario': 'ticket', 'answer': None}
+2020-08-28 09:04:20,117 : DEBUG - User gets {'name': 'help', 'token': ('/help', 'help'), 'answer': 'Чтобы закзать авиабилет на самолёт введите "/ticket" и следуйте инструкциям'}
+2020-08-28 09:04:20,255 : INFO - Не умеем обрабатывать такое событие такого типа VkBotEventType.MESSAGE_REPLY
+2020-08-28 09:05:15,245 : INFO - Не умеем обрабатывать такое событие такого типа VkBotEventType.MESSAGE_TYPING_STATE
+2020-08-28 09:05:15,835 : DEBUG - User gets {'name': 'Cпасибо', 'token': ('спасиб', 'супер'), 'scenario': None, 'answer': 'Вам спасибо за ваше обращение :)'}
+2020-08-28 09:05:15,836 : DEBUG - User gets {'name': 'ticket', 'token': ('/ticket', 'ticket'), 'scenario': 'ticket', 'answer': None}
+2020-08-28 09:05:15,836 : DEBUG - User gets {'name': 'help', 'token': ('/help', 'help'), 'answer': 'Чтобы закзать авиабилет на самолёт введите "/ticket" и следуйте инструкциям'}
+2020-08-28 09:05:15,943 : INFO - Не умеем обрабатывать такое событие такого типа VkBotEventType.MESSAGE_REPLY
