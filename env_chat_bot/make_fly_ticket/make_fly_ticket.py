@@ -28,5 +28,3 @@ def make_ticket(id, from_, to, date):
     temp_file.seek(0)
     return temp_file
 
-
-# make_ticket(id='524224', from_='Moscow', to='ShriLanka', date='21.08.2020')
